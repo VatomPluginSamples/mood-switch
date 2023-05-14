@@ -1,0 +1,15 @@
+{
+  "id": "mood-switch",
+  "name": "Mood Switch",
+  "version": "0.0.1",
+  "beta": true,
+  "personalPlugin": true,
+  "description": "Demonstrates the ability to adjust lighting and ambiance from plugin code.",
+  "longDescription": "Demonstrates the ability to adjust lighting and ambiance from plugin code.",
+  "configuration": "TBD",
+  "category": "3d Objects",
+  "businessId": "3UewHF0ge9",
+  "price": 0,
+  "releaseNotes": "TBD",
+  "entrypoint": ""
+}
