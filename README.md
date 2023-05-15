@@ -15,3 +15,4 @@ Demonstrates the ability to adjust lighting and ambiance from
 > **Note:** You can only sideload plugins in a space you are the owner of.
 
 
+http://localhost:9000/plugin.js
