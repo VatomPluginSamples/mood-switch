@@ -9,31 +9,41 @@ import { BasePlugin, BaseComponent } from 'vatom-spaces-plugins'
  * @license MIT
  * @author Vatom Inc.
  */
-export default class MyPlugin extends BasePlugin {
+export default class MoodSwitchPlugin extends BasePlugin {
+  //================ properties of class QueueNextVideoPlugin
 
-    /** Plugin info */
-    static id = "vatom-template-plugin"
-    static name = "Vatom Template Plugin"
-    static description = "Description of the plugin goes here."
+  // Plugin ID
+  static get id()             { return 'mood-switch-plugin' }
+  static get name()           { return 'Mood Switch Plugin' } 
+  static get description()    { return "Demonstrates the ability to adjust lighting"
+    + " and ambiance from plugin code." }
+  //
+  isMoodHigh = false;
 
-    /** Called on load */
-    onLoad() {
 
-        // Create a button in the toolbar
-        this.menus.register({
-            icon: this.paths.absolute('button-icon.png'),
-            text: 'Plugin',
-            action: () => this.onButtonPress()
-        })
+  //================ methods for class QueueNextVideoPlugin
 
-    }
+  onLoad() {
+    // Create BtnA - MLK video
+    this.menus.register({
+        icon: this.paths.absolute('button-icon.png'),
+        text: 'Toggle Mood',
+        action: () => this.onMoodChangeBtn()
+    });
 
-    /** Called when the user presses the action button */
-    onButtonPress() {
+  }// onLoad()
+  
 
-        // Show alert
-        this.menus.alert(`Hello from ${this.constructor.name} version ${require('../package.json').version}!`, 'Hello world!', 'info')
+  onMoodChangeBtn() {
+    // Toggle mood.
+    this.isMoodHigh = ! this.isMoodHigh;
+    // Announce via toast message.
+    this.menus.toast({
+      text: 'Mood changing to '
+        + (this.isMoodHigh ? 'high' : 'low'),
+      duration: 2000
+    });
+  }// onMoodChangeBtn()
 
-    }
 
-}
+}// class MoodSwitchPlugin ===============================================================
